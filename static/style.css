@@ -1,0 +1,109 @@
+/* 기본 설정 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* 목록 스타일 */
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    min-width: 200px; /* 버튼 최소 너비 */
+}
+
+ul li a:hover {
+    background-color: #2980b9;
+}
+
+/* 테이블 스타일 (기업 상세 정보) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fdfdfd;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    width: 30%; /* 항목 이름 칸 너비 조정 */
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* 하단 링크 스타일 */
+.back-links {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-links a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #7f8c8d;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.back-links a:hover {
+    background-color: #5c6a6b;
+}
+
+/* 특정 페이지를 위한 조정 (필요시) */
+/* 예: 상세 페이지 테이블이 길어질 경우 대비 */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 20px;
+    }
+    ul li a {
+        min-width: unset;
+        width: 90%;
+    }
+}
