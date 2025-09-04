@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ company_info['기업명'] }} - 상세 정보</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ company_info['기업명'] }}</h1>
+        <table border="1">
+            {% for key, value in company_info.items() %}
+                <tr>
+                    <th>{{ key }}</th>
+                    <td>
+                        {% if key == '홈페이지' and value.startswith('http') %}
+                            <a href="{{ value }}" target="_blank">{{ value }}</a>
+                        {% elif key == '매출금액 1위 제품/서비스' and value == '-' %}
+                            제공되지 않음
+                        {% elif key == '매출금액 2위 제품/서비스' and value == '-' %}
+                            제공되지 않음
+                        {% else %}
+                            {{ value }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <div class="back-links">
+            <a href="/sector/{{ company_info['산업 분야(6종)'] }}">이전 단계로 돌아가기</a>
+            <a href="/">처음으로 돌아가기</a>
+        </div>
+    </div>
+</body>
+</html>

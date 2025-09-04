@@ -1,0 +1,157 @@
+/* 기본 설정 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* 목록 스타일 */
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    min-width: 200px; /* 버튼 최소 너비 */
+}
+
+ul li a:hover {
+    background-color: #2980b9;
+}
+
+/* 테이블 스타일 (기업 상세 정보) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fdfdfd;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    width: 30%; /* 항목 이름 칸 너비 조정 */
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* 하단 링크 스타일 */
+.back-links {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-links a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #7f8c8d;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.back-links a:hover {
+    background-color: #5c6a6b;
+}
+
+/* 특정 페이지를 위한 조정 (필요시) */
+/* 예: 상세 페이지 테이블이 길어질 경우 대비 */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 20px;
+    }
+    ul li a {
+        min-width: unset;
+        width: 90%;
+    }
+}
+/* --- 기업 선택 페이지 그리드 스타일 (새로 추가) --- */
+.company-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5개의 열을 동일한 비율로 생성 */
+    gap: 15px; /* 각 항목(버튼) 사이의 간격 */
+    padding: 0;
+    list-style-type: none; /* 목록 앞에 붙는 점 제거 */
+}
+
+.company-grid li {
+    /* li 태그는 특별한 스타일이 필요 없습니다. */
+}
+
+.company-grid li a {
+    display: flex; /* Flexbox를 사용하여 내부 텍스트를 정렬합니다. */
+    align-items: center; /* 텍스트를 수직으로 중앙에 위치시킵니다. */
+    justify-content: center; /* 텍스트를 수평으로 중앙에 위치시킵니다. */
+    height: 80px; /* 모든 버튼의 높이를 동일하게 설정 */
+    padding: 5px;
+    text-align: center;
+    min-width: unset; /* 이전에 설정된 최소 너비를 초기화합니다. */
+    width: 100%; /* 부모 요소(li)에 꽉 차도록 설정합니다. */
+    box-sizing: border-box; /* 패딩과 테두리를 너비 계산에 포함시킵니다. */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transform: translateY(0);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.company-grid li a:hover {
+    transform: translateY(-3px); /* 마우스를 올리면 위로 살짝 떠오르는 효과 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+
+/* --- 반응형 웹 디자인 (화면 크기에 따라 열 개수 조정) --- */
+/* 화면 너비가 900px 이하일 때 (태블릿 등) */
+@media (max-width: 900px) {
+    .company-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3열로 변경 */
+    }
+}
+
+/* 화면 너비가 600px 이하일 때 (모바일 등) */
+@media (max-width: 600px) {
+    .company-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2열로 변경 */
+    }
+}
